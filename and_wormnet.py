@@ -10,10 +10,15 @@ fired = torch.zeros_like(state)
 fired[0] = 1.
 fired[1] = 1.
 
-connectome[2, 0] = 5.
-connectome[2, 1] = 5.
-connectome[4, 3] = 10.
-clock_neuron[3] = 10.
+# connectome[2, 0] = 5.
+# connectome[2, 1] = 5.
+# connectome[4, 3] = 10.
+# clock_neuron[3] = 10.
+
+connectome[3, 0] = 5.
+connectome[3, 1] = 5.
+connectome[4, 2] = 10.
+clock_neuron[2] = 10.
 
 print(f"{clock_neuron}")
 
@@ -22,4 +27,4 @@ for i in range(5):
     print(f"STEP: {i}")
     print(f"{state=}")
     print(f"{fired=}")
-    print(f"fire_1 = {fired[2]}, fire_0 = {fired[4]}")
+    print(f"fire_1 = {fired[3]}, fire_0 = {fired[4]}")
