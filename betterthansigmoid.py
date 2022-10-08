@@ -15,8 +15,8 @@ def clamp_appx(x: torch.Tensor) -> torch.Tensor:
     return torch.clamp((x+1.)/2., 0, 1)
     # return torch.clamp(x, 0, 1)
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-# Xs = np.linspace(-2, 2, num=101)
-# plt.plot(Xs, clipped_sigmoid_appx(Xs))
-# plt.show()
+Xs = np.linspace(-2, 2, num=101)
+plt.plot(Xs, clipped_sigmoid_appx(Xs))
+plt.show()
