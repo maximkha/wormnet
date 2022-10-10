@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.parameter import Parameter
+from noisygrad import NoisyGrad
 
 # nneuron = 10
 # thresh = 8.
@@ -53,10 +54,10 @@ class WormNet(nn.Module):
 # first neurons are input
 # last n_out are output
 def worm_classification_forward(worm: WormNet, inputs, n_out, n_step, inv_temp):
-    fired = torch.zeros((inputs.shape[0], worm.clock_neuron.shape[0]))
-    state = torch.zeros((inputs.shape[0], worm.clock_neuron.shape[0]))
+    fired = torch.zeros((inputs.shape[0], worm.clock_neuron.shape[0])).to(inputs.device)
+    state = torch.zeros((inputs.shape[0], worm.clock_neuron.shape[0])).to(inputs.device)
     fired[:, :inputs.shape[1]] = inputs
-    current_out = torch.zeros(inputs.shape[0], n_out)
+    current_out = torch.zeros(inputs.shape[0], n_out).to(inputs.device)
     for _ in range(n_step):
         if inv_temp == None:
             state, fired = worm.perfect_forward(state, fired)
