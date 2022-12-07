@@ -19,9 +19,9 @@ wormn = WormNet(N_NEURON, THRESH)
 Xs = torch.tensor([[1.,0.],[0.,1.],[0.,0.],[1.,1.]])
 # Ys = torch.tensor([[1.,0.],[1.,0.],[1.,0.],[0.,1.]])
 
-# classes = torch.tensor([0,0,0,1])
+classes = torch.tensor([0,0,0,1])
 # classes = torch.tensor([0,0,1,0])
-classes = torch.tensor([0,1,1,0])
+# classes = torch.tensor([0,1,1,0])
 # classes = torch.tensor([1,1,0,0])
 # classes = torch.tensor([1,1,1,0])
 
