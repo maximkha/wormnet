@@ -20,8 +20,8 @@ Xs = torch.tensor([[1.,0.],[0.,1.],[0.,0.],[1.,1.]])
 # classes = torch.tensor([0,0,0,1])
 # classes = torch.tensor([0,0,1,0])
 # classes = torch.tensor([0,1,1,0])
-classes = torch.tensor([1,1,0,0])
-# classes = torch.tensor([1,1,1,0])
+# classes = torch.tensor([1,1,0,0])
+classes = torch.tensor([1,1,1,0])
 
 torch.autograd.set_detect_anomaly(True)
 
